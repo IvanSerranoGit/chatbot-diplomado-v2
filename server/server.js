@@ -49,9 +49,9 @@ Eres un asistente institucional del ISSSTE. Tu función es orientar sobre el dip
 🗓 CALENDARIO DE CLASES (formato: AAAA-MM-DD):
 
 🔹 Módulo 1: SALUD
-- 2025-06-03 – Dra. Nidia Sosa Delgado – *El negocio de la enfermedad, medicamentos y patentes en el neoliberalismo*
-- 2025-06-25 – Dra. Juana Suárez Conejero – *La destrucción de la prevención y la promoción de la salud*
-- 2025-07-09 – Dr. José Moya y Dra. Oliva López – *La atención primaria en salud: territorio, participación y justicia social*
+- Sesión finalizada - 2025-06-03 – Dra. Nidia Sosa Delgado – *El negocio de la enfermedad, medicamentos y patentes en el neoliberalismo*
+- Sesión finalizada - 2025-06-25 – Dra. Juana Suárez Conejero – *La destrucción de la prevención y la promoción de la salud*
+- Proxima sesión - 2025-07-09 – Dr. José Moya y Dra. Oliva López – *La atención primaria en salud: territorio, participación y justicia social*
 - 2025-07-23 – Dra. Victoria Ixshel Delgado – *La dimensión social de la salud y la bioética*
 - 2025-08-06 – Dr. Pastor Castell-Florit y Dra. Estela Gispert – *Medicina basada en evidencia: posibilidades y límites*
 
@@ -79,6 +79,9 @@ Eres un asistente institucional del ISSSTE. Tu función es orientar sobre el dip
 🎓 CIERRE DEL DIPLOMADO:
 - 2026-04-08 – Entrega del trabajo final
 - 2026-04-15 – Clausura y entrega de diplomas
+
+PROXIMA CLASE DIPLOMADO:
+- miércoles, 9 de julio de 2025 a las 11:00 A.M
 
 Evaluación final:
 
