@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Webinarios | Museo Digital Voces y Raíces</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./repo.css">
+</head>
+<body class="bg-white text-gray-900 overflow-x-hidden">
+
+   <!-- 1. Menú superior -->
+    <header class="bg-white shadow p-4 flex justify-between items-center flex-wrap max-w-7xl mx-auto">
+        <img src="assets/logo.png" alt="Logo" class="h-16" />
+        <nav class="relative">
+            <button id="menu-toggle" class="md:hidden text-gray-800 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+            <ul id="menu"
+                class="absolute right-0 mt-2 bg-white rounded shadow-md hidden z-50 md:flex md:static md:bg-transparent md:shadow-none md:flex-row md:space-x-4 text-base">
+                <li><a href="./diplomado.html" class="block px-2 py-2 hover:text-pink-700">Diplomado</a></li>
+                <li><a href="./cursos.html" class="block px-2 py-2 hover:text-pink-700">Cursos</a></li>
+                <li><a href="./webinar.html" class="block px-2 py-2 hover:text-pink-700">Webinarios</a></li>
+                <li><a href="./memoria.html" class="block px-2 py-2 hover:text-pink-700">Identidad e Historia</a></li>
+                <li><a href="#" class="block px-2 py-2 hover:text-pink-700">Libros, Revistas y Videos</a></li>
+                <li><a href="./praxis/index.html" target="_blank" class="block px-4 py-2 hover:text-pink-700">Congresos
+                        Praxis</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="p-2 flex justify-between items-center flex-wrap max-w-7xl mx-auto pleca"></div>
+    <div class="shadow p-1 flex justify-between items-center flex-wrap max-w-7xl mx-auto pleca-amarilla mb-4"></div>
+
+  <!-- Banner -->
+  <section class="pt-28 bg-gradient-to-r from-pink-700 to-rose-800 text-white py-20 text-center">
+    <div class="max-w-screen-xl mx-auto px-6">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4 -mt-8">Webinarios</h1>
+      <p class="text-lg md:text-xl max-w-2xl mx-auto">Accede a las grabaciones de webinarios impartidos por la Organización Panamericana de la Salud (OPS), difundidos por el ISSSTE como parte de su estrategia educativa.</p>
+    </div>
+  </section>
+
+  <!-- Contenido de webinarios -->
+  <main class="max-w-screen-xl mx-auto px-6 py-12 space-y-16">
+    <section>
+      <h2 class="text-2xl font-semibold text-rose-800 mb-6">Organización Panamericana de la Salud (OPS)</h2>
+      <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-2">
+
+        <!-- Webinario 1 -->
+        <div class="bg-white shadow rounded overflow-hidden">
+          <div class="relative w-full pt-[56.25%]">
+            <iframe class="absolute top-0 left-0 w-full h-full rounded" src="https://www.youtube.com/embed/1o3wKTkgYlw"
+              title="Webinario 1 OPS" frameborder="0" allowfullscreen
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+            </iframe>
+          </div>
+          <div class="p-4">
+            <h4 class="text-lg font-bold">Modelo de Atención a la Salud para el Bienestar</h4>
+            <h3>Impartido: Dra. Oliva López Arellano</h3>
+            <p class="text-base text-gray-600 mt-4">Consultora Nacional en Sistemas y Servicios de Salud de la OPS/OMS en México.
+            Te invitamos a conocer el Modelo de Salud MAS BIENESTAR.
+            </p>
+          </div>
+        </div>
+
+        <!-- Webinario 2 -->
+        <div class="bg-white shadow rounded overflow-hidden">
+          <div class="relative w-full pt-[56.25%]">
+            <iframe class="absolute top-0 left-0 w-full h-full rounded" src="https://www.youtube.com/embed/UGdVNFWRk1U"
+              title="Webinario 2 OPS" frameborder="0" allowfullscreen
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+            </iframe>
+          </div>
+          <div class="p-4">
+            <h4 class="text-lg font-bold">Ética de la Salud</h4>
+            <h3>Impartido: Dr. David Benítez Valladares</h3>
+            <p class="text-base text-gray-600 mt-4">Secretario Técnico de la Comisión de Bioética de la Ciudad de México (SEDESA).
+            Aprende sobre ética de la salud desde una perspectiva de bioética latinoamericana.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+    <!-- Footer -->
+    <footer class="bg-pink-800 text-white p-6 mt-16">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
+            <p class="text-sm">© 2025 ISSSTE - Todos los derechos reservados</p>
+            <div class="flex space-x-4 mt-4 md:mt-0">
+                <a href="aviso.html" class="hover:underline text-sm">Aviso de privacidad</a>
+                <a href="legal.html" class="hover:underline text-sm">Aviso Legal</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

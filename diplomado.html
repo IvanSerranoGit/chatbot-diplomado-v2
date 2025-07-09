@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Página Chatbot Diplomado</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="bg-gray-50 text-gray-800 font-sans">
+  <!-- Header -->
+  <!-- 1. Menú superior -->
+    <header class="bg-white shadow p-4 flex justify-between items-center flex-wrap max-w-7xl mx-auto">
+        <img src="assets/logo.png" alt="Logo" class="h-16" />
+        <nav class="relative">
+            <button id="menu-toggle" class="md:hidden text-gray-800 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+            <ul id="menu"
+                class="absolute right-0 mt-2 bg-white rounded shadow-md hidden z-50 md:flex md:static md:bg-transparent md:shadow-none md:flex-row md:space-x-4 text-base">
+                <li><a href="./diplomado.html" class="block px-2 py-2 hover:text-pink-700">Diplomado</a></li>
+                <li><a href="./cursos.html" class="block px-2 py-2 hover:text-pink-700">Cursos</a></li>
+                <li><a href="./webinar.html" class="block px-2 py-2 hover:text-pink-700">Webinarios</a></li>
+                <li><a href="./memoria.html" class="block px-2 py-2 hover:text-pink-700">Identidad e Historia</a></li>
+                <li><a href="#" class="block px-2 py-2 hover:text-pink-700">Libros, Revistas y Videos</a></li>
+                <li><a href="./praxis/index.html" target="_blank" class="block px-4 py-2 hover:text-pink-700">Congresos
+                        Praxis</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="p-2 flex justify-between items-center flex-wrap max-w-7xl mx-auto pleca"></div>
+    <div class="shadow p-1 flex justify-between items-center flex-wrap max-w-7xl mx-auto pleca-amarilla mb-4"></div>
+
+ <!-- SECCIÓN PRINCIPAL -->
+<section class="mt-24 md:mt-0 bg-gray-200 py-10">
+  <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-6 px-4 items-stretch">
+    <!-- SLIDER -->
+    <div class="h-[60vh]">
+      <div id="slider" class="relative w-full h-full overflow-hidden rounded-xl shadow-md bg-white">
+        <div id="slides" class="flex transition-transform duration-700 ease-in-out w-full h-full">
+          <img src="assets/banner1.jpg" class="w-full h-full object-cover flex-shrink-0 rounded-xl" alt="Banner 1" />
+          <img src="assets/banner1.jpg" class="w-full h-full object-cover flex-shrink-0 rounded-xl" alt="Banner 2" />
+          <img src="assets/banner1.jpg" class="w-full h-full object-cover flex-shrink-0 rounded-xl" alt="Banner 3" />
+        </div>
+
+        <!-- Botones -->
+        <button id="prev"
+          class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-30 text-white px-3 py-1">
+          &#10094;
+        </button>
+        <button id="next"
+          class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-30 text-white px-3 py-1">
+          &#10095;
+        </button>
+
+        <!-- Puntos -->
+        <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2" id="dots">
+          <span class="dot w-3 h-3 rounded-full bg-white bg-opacity-50 cursor-pointer"></span>
+          <span class="dot w-3 h-3 rounded-full bg-white bg-opacity-50 cursor-pointer"></span>
+          <span class="dot w-3 h-3 rounded-full bg-white bg-opacity-50 cursor-pointer"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- MÓDULOS COMO BOTONES -->
+    <div class="flex flex-col justify-center">
+      <h2 class="text-2xl font-bold mb-6 text-center text-gray-800">Explora los Módulos</h2>
+      <div class="grid grid-cols-2 gap-4">
+        <button onclick="openModule('modulo1')"
+          class="bg-pink-800 hover:bg-pink-900 text-white p-6 rounded shadow flex flex-col items-center justify-center text-center transition h-32">
+          <p class="font-semibold text-base">Módulo 1<br>Salud</p>
+        </button>
+        <button onclick="openModule('modulo2')"
+          class="bg-pink-800 hover:bg-pink-900 text-white p-6 rounded shadow flex flex-col items-center justify-center text-center transition h-32">
+          <p class="font-semibold text-base">Módulo 2<br>Ciudad y seguridad social</p>
+        </button>
+        <button onclick="openModule('modulo3')"
+          class="bg-pink-800 hover:bg-pink-900 text-white p-6 rounded shadow flex flex-col items-center justify-center text-center transition h-32">
+          <p class="font-semibold text-base">Módulo 3<br>Derechos sociales</p>
+        </button>
+        <button onclick="openModule('modulo4')"
+          class="bg-pink-800 hover:bg-pink-900 text-white p-6 rounded shadow flex flex-col items-center justify-center text-center transition h-32">
+          <p class="font-semibold text-base">Módulo 4<br>Estado de bienestar</p>
+        </button>
+      </div>
+
+      <div class="mt-6 text-center">
+  <a href="assets/programa.pdf" download target="_blank"
+    class="inline-block bg-pink-700 text-white px-6 py-3 rounded hover:bg-pink-800 transition font-semibold">
+    📄 Descargar Programa Completo del Diplomado
+  </a>
+</div>
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- Modal para los módulos -->
+  <!-- modulo1 -->
+   <div id="modulo1" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+  <div class="bg-white p-6 rounded-lg shadow-2xl w-[95%] max-w-3xl relative max-h-[90vh] overflow-y-auto">
+    <button onclick="closeModule('modulo1')" class="absolute top-2 right-2 text-gray-500 hover:text-red-600 text-xl">&times;</button>
+    <h3 class="text-xl font-bold mb-4">Módulo 1: Salud</h3>
+    <table class="w-full text-left border border-gray-300">
+      <thead class="bg-gray-200">
+        <tr>
+          <th class="px-4 py-2 border">Tema</th>
+          <th class="px-4 py-2 border">Ponente(s)</th>
+          <th class="px-4 py-2 border">Fecha</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="px-4 py-2 border">El negocio de la enfermedad, medicamentos y patentes en el neoliberalismo</td>
+          <td class="px-4 py-2 border">Dra. Nidia Sosa Delgado</td>
+          <td class="px-4 py-2 border">3 de junio</td>
+        </tr>
+        <tr>
+          <td class="px-4 py-2 border">La destrucción de la prevención y la promoción de la salud</td>
+          <td class="px-4 py-2 border">Dra. Juana E. Suárez Conejero</td>
+          <td class="px-4 py-2 border">25 de junio</td>
+        </tr>
+        <tr>
+          <td class="px-4 py-2 border">Atención primaria en salud</td>
+          <td class="px-4 py-2 border">Dr. José Moya Medina y Dra. Oliva López Arellano</td>
+          <td class="px-4 py-2 border">9 de julio</td>
+        </tr>
+        <tr>
+          <td class="px-4 py-2 border">La dimensión social de la salud y la bioética</td>
+          <td class="px-4 py-2 border">Dra. Victoria Ixshel Delgado Campos</td>
+          <td class="px-4 py-2 border">23 de julio</td>
+        </tr>
+        <tr>
+          <td class="px-4 py-2 border">Enfoque clínico Vs medicina basada en evidencia</td>
+          <td class="px-4 py-2 border">Dr. Pastor Castell-Florit Serrate y Dra. Estela Gispert</td>
+          <td class="px-4 py-2 border">6 de agosto</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- modulos 2 -->
+
+<div id="modulo2" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+  <div class="bg-white p-6 rounded-lg shadow-2xl w-[95%] max-w-3xl relative max-h-[90vh] overflow-y-auto">
+    <button onclick="closeModule('modulo2')" class="absolute top-2 right-2 text-gray-500 hover:text-red-600 text-xl">&times;</button>
+    <h3 class="text-xl font-bold mb-4">Módulo 2: Ciudad y Seguridad Social</h3>
+    <table class="w-full text-left border border-gray-300">
+      <thead class="bg-gray-200">
+        <tr>
+          <th class="px-4 py-2 border">Tema</th>
+          <th class="px-4 py-2 border">Ponente(s)</th>
+          <th class="px-4 py-2 border">Fecha</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="px-4 py-2 border">Regiones desiguales, trabajos precarios</td>
+          <td class="px-4 py-2 border">Mtro. Mario J. Zepeda y Dr. Adrián Escamilla Trejo</td>
+          <td class="px-4 py-2 border">20 de agosto</td>
+        </tr>
+        <tr>
+          <td class="px-4 py-2 border">La mercantilización de la ciudad</td>
+          <td class="px-4 py-2 border">Dra. Julie-Anne Boudreau y Dr. Enrique Soto Alva</td>
+          <td class="px-4 py-2 border">3 de septiembre</td>
+        </tr>
+        <tr>
+          <td class="px-4 py-2 border">El socialconformismo</td>
+          <td class="px-4 py-2 border">Dra. Juana E. Suárez Conejero</td>
+          <td class="px-4 py-2 border">17 de septiembre</td>
+        </tr>
+        <tr>
+          <td class="px-4 py-2 border">Sistema de cuidados y redes de apoyo</td>
+          <td class="px-4 py-2 border">Dra. Virginia E. García Sánchez</td>
+          <td class="px-4 py-2 border">1 de octubre</td>
+        </tr>
+        <tr>
+          <td class="px-4 py-2 border">La salud mental también es social</td>
+          <td class="px-4 py-2 border">Dra. Vivian Pérez y Dr. Alberto Gómez</td>
+          <td class="px-4 py-2 border">15 de octubre</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- modulo 3 -->
+
+<div id="modulo3" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+  <div class="bg-white p-6 rounded-lg shadow-2xl w-[95%] max-w-3xl relative max-h-[90vh] overflow-y-auto">
+    <button onclick="closeModule('modulo3')" class="absolute top-2 right-2 text-gray-500 hover:text-red-600 text-xl">&times;</button>
+    <h3 class="text-xl font-bold mb-4">Módulo 3: Derechos Sociales e Igualdad Sustantiva</h3>
+    <table class="w-full text-left border border-gray-300">
+      <thead class="bg-gray-200">
+        <tr>
+          <th class="px-4 py-2 border">Tema</th>
+          <th class="px-4 py-2 border">Ponente(s)</th>
+          <th class="px-4 py-2 border">Fecha</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="px-4 py-2 border">La destrucción neoliberal de los derechos sociales</td>
+          <td class="px-4 py-2 border">Dr. Marcos Roitman Rosenmann</td>
+          <td class="px-4 py-2 border">29 de octubre</td>
+        </tr>
+        <tr>
+          <td class="px-4 py-2 border">Grupos vulnerables en el acceso a servicios</td>
+          <td class="px-4 py-2 border">Dra. Nidia Sosa Delgado</td>
+          <td class="px-4 py-2 border">12 de noviembre</td>
+        </tr>
+        <tr>
+          <td class="px-4 py-2 border">Envejecimiento y seguridad social</td>
+          <td class="px-4 py-2 border">Dra. Graciela Z. Rosso</td>
+          <td class="px-4 py-2 border">26 de noviembre</td>
+        </tr>
+        <tr>
+          <td class="px-4 py-2 border">Brechas de género y trabajo no remunerado</td>
+          <td class="px-4 py-2 border">Dra. Virginia E. García Sánchez</td>
+          <td class="px-4 py-2 border">10 de diciembre</td>
+        </tr>
+        <tr>
+          <td class="px-4 py-2 border">Igualdad formal vs igualdad sustantiva</td>
+          <td class="px-4 py-2 border">Dra. Ma. Elvira Concheiro Bórquez</td>
+          <td class="px-4 py-2 border">14 de enero</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- modulo 4 -->
+
+<div id="modulo4" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+  <div class="bg-white p-6 rounded-lg shadow-2xl w-[95%] max-w-3xl relative max-h-[90vh] overflow-y-auto">
+    <button onclick="closeModule('modulo4')" class="absolute top-2 right-2 text-gray-500 hover:text-red-600 text-xl">&times;</button>
+    <h3 class="text-xl font-bold mb-4">Módulo 4: Estado de Bienestar y Justicia Social</h3>
+    <table class="w-full text-left border border-gray-300">
+      <thead class="bg-gray-200">
+        <tr>
+          <th class="px-4 py-2 border">Tema</th>
+          <th class="px-4 py-2 border">Ponente(s)</th>
+          <th class="px-4 py-2 border">Fecha</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="px-4 py-2 border">Modelos internacionales de Estado de bienestar</td>
+          <td class="px-4 py-2 border">Dra. Berenice P. Ramírez</td>
+          <td class="px-4 py-2 border">28 de enero</td>
+        </tr>
+        <tr>
+          <td class="px-4 py-2 border">Estado de bienestar en la 4T</td>
+          <td class="px-4 py-2 border">Paco Ignacio Taibo II y Mtro. Pablo Yanes</td>
+          <td class="px-4 py-2 border">11 de febrero</td>
+        </tr>
+        <tr>
+          <td class="px-4 py-2 border">Tecnologías y bienestar colectivo</td>
+          <td class="px-4 py-2 border">Dra. Tatiana Fiordelisio</td>
+          <td class="px-4 py-2 border">25 de febrero</td>
+        </tr>
+        <tr>
+          <td class="px-4 py-2 border">Historia del ISSSTE</td>
+          <td class="px-4 py-2 border">Dra. Amparo Ruiz del Castillo</td>
+          <td class="px-4 py-2 border">11 de marzo</td>
+        </tr>
+        <tr>
+          <td class="px-4 py-2 border">Repensando el ISSSTE</td>
+          <td class="px-4 py-2 border">Dr. Martí Batres Guadarrama</td>
+          <td class="px-4 py-2 border">25 de marzo</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+  <!-- Grabaciones -->
+  <section id="grabaciones" class="py-20 bg-gray-100 px-6">
+    <div class="max-w-6xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-6">Grabaciones de Clases</h2>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- clase 1 -->
+        <div class="bg-white p-4 rounded shadow">
+          <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1095806273?h=802b40b3c2&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Diplomado Liderazgos Clase 1"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+          <p class="mt-2 font-semibold text-xl">Clase 1: El negocio de la enfermedad,
+medicamentos y patentes en el
+neoliberalismo</p>
+        </div>
+
+        <!-- clase 2 -->
+
+        <div class="bg-white p-4 rounded shadow">
+          <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1099815255?h=d5f94d0d2f&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Diplomado Liderazgos Clase 1"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+          <p class="mt-2 font-semibold text-xl">Clase 2: La destrucción de la prevención y la
+promoción de la salud</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Cápsulas -->
+<section id="capsulas" class="py-20 bg-white px-6">
+  <div class="max-w-6xl mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-6">Cápsulas informativas</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      
+      <!-- Video 1 -->
+      <div class="bg-gray-100 p-4 rounded shadow">
+        <p class="font-medium mb-2">Cápsula 1: Dra. Nidia Sosa Delgado</p>
+        <div style="padding-top:56.25%; position:relative;">
+          <iframe src="https://player.vimeo.com/video/1099724540?h=f4b87df263&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
+            frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+            style="position:absolute;top:0;left:0;width:100%;height:100%;" 
+            title="Clase 1 DL, Cápsula 1, Dra Nidia">
+          </iframe>
+        </div>
+      </div>
+
+      <!-- Video 2 -->
+      <div class="bg-gray-100 p-4 rounded shadow">
+        <p class="font-medium mb-2">Cápsula 2: Dra. Nidia Sosa Delgado</p>
+        <div style="padding-top:56.25%; position:relative;">
+          <iframe src="https://player.vimeo.com/video/1099732583?h=331330a349&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
+            frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+            style="position:absolute;top:0;left:0;width:100%;height:100%;" 
+            title="Clase 1 DL, Cápsula 2, Dra Nidia">
+          </iframe>
+        </div>
+      </div>
+
+      <!-- Video 3 -->
+      <div class="bg-gray-100 p-4 rounded shadow">
+        <p class="font-medium mb-2">Cápsula 3: Dra. Nidia Sosa Delgado</p>
+        <div style="padding-top:56.25%; position:relative;">
+          <iframe src="https://player.vimeo.com/video/1099732724?h=fecd882785&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
+            frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+            style="position:absolute;top:0;left:0;width:100%;height:100%;" 
+            title="Clase 1 DL, Cápsula 3, Dra Nidia">
+          </iframe>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Script de Vimeo Player (solo necesitas uno) -->
+<script src="https://player.vimeo.com/api/player.js"></script>
+
+
+
+  <!-- Botón flotante del Chat -->
+  <div id="chat-button">
+    <img src="assets/ico.png" alt="Chat" />
+  </div>
+
+<!-- Contenedor del Chat -->
+<!-- Contenedor del Chat -->
+<div id="chat-container" class="fixed bottom-4 right-4 bg-white rounded-lg shadow-lg w-full max-w-md p-4">
+  <div id="messages" class="mb-2"></div>
+  <form id="input-form" onsubmit="enviarPregunta(); return false;">
+    <input type="text" id="pregunta" placeholder="Haz tu pregunta..." class="w-full border px-3 py-2 rounded" />
+    <button type="submit" id="send" class="mt-2 bg-pink-700 text-white px-4 py-2 rounded hover:bg-pink-800 transition">
+      Enviar
+    </button>
+  </form>
+</div>
+
+  <!-- Footer -->
+  <footer class="text-white text-sm text-center py-6">
+    &copy; 2025 Diplomado ISSSTE. Chatbot educativo desarrollado con propósito formativo.
+  </footer>
+
+  <div id="popup-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+    <div class="bg-white p-8 rounded-lg shadow-2xl w-[95%] max-w-5xl relative max-h-[90vh] overflow-y-auto">
+      <button id="close-popup" class="absolute top-2 right-2 text-gray-500 hover:text-red-600 text-xl">&times;</button>
+      <h3 class="text-xl font-bold mb-4">Programa del Diplomado</h3>
+      <div style="position:relative;padding-top:0;width:900px;height:500px;"
+        class="w-full overflow-x-auto max-w-full sm:overflow-hidden"">
+        <iframe
+          style=" position:absolute;border:none;width:100%;height:100%;left:0;top:0;"
+        src="https://online.fliphtml5.com/ysimb/fugi/" seamless="seamless" scrolling="no" frameborder="0"
+        allowtransparency="true" allowfullscreen="true">
+        </iframe>
+      </div>
+      <a href="assets/programa.pdf" download target="_blank"
+        class="inline-block mt-6 bg-pink-700 text-white px-5 py-2 rounded hover:bg-pink-800 transition">
+        Descargar PDF
+      </a>
+    </div>
+
+  </div>
+  <!-- Script principal -->
+
+  <script src="script.js"></script>
+  <script>
+    function openModule(id) {
+      document.getElementById(id).classList.remove('hidden');
+      document.getElementById(id).classList.add('flex');
+    }
+
+    function closeModule(id) {
+      document.getElementById(id).classList.remove('flex');
+      document.getElementById(id).classList.add('hidden');
+    }
+  </script>
+
+  <script>
+  async function enviarPregunta() {
+    const input = document.getElementById("pregunta");
+    const messagesDiv = document.getElementById("messages");
+
+    const mensaje = input.value.trim();
+    if (!mensaje) return;
+
+    // Agrega la burbuja del usuario
+    const burbujaUsuario = document.createElement("div");
+    burbujaUsuario.className = "bg-pink-200 text-gray-800 p-3 rounded-lg my-2 self-end max-w-[80%]";
+    burbujaUsuario.textContent = mensaje;
+    messagesDiv.appendChild(burbujaUsuario);
+
+    // Limpia el input
+    input.value = "";
+
+    // Agrega mensaje de carga
+    const burbujaCargando = document.createElement("div");
+    burbujaCargando.className = "bg-gray-200 text-gray-600 p-3 rounded-lg my-2 self-start max-w-[80%]";
+    burbujaCargando.textContent = "⏳ Pensando...";
+    messagesDiv.appendChild(burbujaCargando);
+    messagesDiv.scrollTop = messagesDiv.scrollHeight;
+
+    try {
+      const res = await fetch("http://localhost:3000/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ mensaje })
+      });
+
+      const data = await res.json();
+      burbujaCargando.remove(); // quita el "pensando..."
+
+      const burbujaBot = document.createElement("div");
+      burbujaBot.className = "bg-white text-gray-800 p-3 rounded-lg my-2 self-start shadow max-w-[80%]";
+      burbujaBot.textContent = data.respuesta || "⚠️ No se obtuvo respuesta.";
+      messagesDiv.appendChild(burbujaBot);
+
+      messagesDiv.scrollTop = messagesDiv.scrollHeight;
+    } catch (err) {
+      console.error("❌ Error al enviar:", err);
+      burbujaCargando.remove();
+
+      const burbujaError = document.createElement("div");
+      burbujaError.className = "bg-red-100 text-red-800 p-3 rounded-lg my-2 self-start max-w-[80%]";
+      burbujaError.textContent = "❌ Hubo un error al conectar con el servidor.";
+      messagesDiv.appendChild(burbujaError);
+    }
+  }
+</script>
+</body>
+
+</html>

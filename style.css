@@ -1,0 +1,209 @@
+/* Fuente base */
+body {
+  font-family: sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+.pleca{
+  width: 100%;
+  height: 20px;
+  background-color: #9c2349;
+}
+.slider-container{
+  width: 85%;
+  display: flex;
+  margin: 0 auto;
+  top: 20px;
+    height: 420px; /* Ajusta al gusto */
+
+}
+/* .slider{
+  width: 70%;
+  
+  background-color: #9c2349;
+} */
+
+/* Chat flotante */
+
+.categorias {
+  /* background-color: #9c2349; */
+  border-radius: 20px;
+  height: 170px;
+}
+.ico-categorias{
+  width: 90px;
+}
+.txt-categorias{
+  font-size: 20px;
+}
+.zoom:hover {
+  transform: scale(1.05); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+.direccion{
+  text-decoration: underline;
+  color: #9c2349;
+}
+.badge-fecha {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #831844; /* rojo intenso */
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 8px 14px;
+  border-bottom-right-radius: 8px;
+  z-index: 10;
+}
+/* Aplica a la caja que tiene el scroll horizontal */
+.scroll-eventos::-webkit-scrollbar {
+  height: 8px; /* altura para scroll horizontal */
+}
+
+.scroll-eventos::-webkit-scrollbar-track {
+  background: #f1f1f1; /* color del fondo */
+  border-radius: 10px;
+}
+.max-width{
+  max-width: 458px;
+}
+.scroll-eventos::-webkit-scrollbar-thumb {
+  background-color: #be123c; /* color de la barra (rojo institucional) */
+  border-radius: 10px;
+}
+
+.scroll-eventos::-webkit-scrollbar-thumb:hover {
+  background: #9f1239; /* más oscuro al pasar el mouse */
+}
+
+#chat-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #9c2349;
+  border-radius: 50%;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  z-index: 1000;
+}
+
+#chat-button img {
+  width: 32px;
+  height: 32px;
+}
+
+#chat-container {
+  display: none; /* Oculto al cargar */
+  flex-direction: column;
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 360px;
+  height: 400px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  z-index: 50;
+}
+
+/* Chat messages */
+#messages {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  overflow-y: auto;
+  background-color: #f9f9f9;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.message {
+  margin: 5px 0;
+  display: flex;
+  align-items: center;
+}
+
+.user {
+  text-align: right;
+  justify-content: flex-end;
+  color: blue;
+}
+
+.bot {
+  text-align: left;
+  justify-content: flex-start;
+  color: green;
+}
+
+/* Estilo de input */
+#input-form {
+  display: flex;
+  border-top: 1px solid #ccc;
+}
+
+#input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  outline: none;
+}
+
+#send {
+  background: #9c2349;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* Avatares */
+.avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin: 0 10px;
+}
+
+
+/* Animación para slideshow */
+@keyframes slide {
+  0% { transform: translateX(0%); }
+  33% { transform: translateX(-100%); }
+  66% { transform: translateX(-200%); }
+  100% { transform: translateX(0%); }
+}
+
+.animate-slide {
+  animation: slide 20s infinite;
+}
+.pleca{
+  width: 100%;
+  background-color: #9c2349;
+}
+.pleca-amarilla{
+  background-color: #ecd799;
+}
+footer{
+  background-color: #9c2349;
+}
+
+/* Aplica solo en pantallas menores a 640px */
+@media (max-width: 639px) {
+ .slider-container{
+  width: 80%;
+  display: flex;
+  top: 35px;
+}
+}
+/* Opcional si no usas Tailwind para esto */
+@media (max-width: 768px) {
+  #slider button {
+    font-size: 1rem;
+    padding: 4px 8px;
+  }
+  .slider-container{
+  width: 90%;
+  height: 120px; /* Ajusta al gusto */
+}
+}

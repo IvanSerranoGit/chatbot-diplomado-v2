@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liderazgos ISSSTE</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .resaltado {
+            background-color: #831844 !important;
+            transition: background-color 0.3s ease;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- 1. Menú superior -->
+    <header class="bg-white shadow p-4 flex justify-between items-center flex-wrap max-w-7xl mx-auto">
+        <img src="assets/logo.png" alt="Logo" class="h-16" />
+        <nav class="relative">
+            <button id="menu-toggle" class="md:hidden text-gray-800 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+            <ul id="menu"
+                class="absolute right-0 mt-2 bg-white rounded shadow-md hidden z-50 md:flex md:static md:bg-transparent md:shadow-none md:flex-row md:space-x-4 text-base">
+                <li><a href="./diplomado.html" class="block px-2 py-2 hover:text-pink-700">Diplomado</a></li>
+                <li><a href="./cursos.html" class="block px-2 py-2 hover:text-pink-700">Cursos</a></li>
+                <li><a href="./webinar.html" class="block px-2 py-2 hover:text-pink-700">Webinarios</a></li>
+                <li><a href="./memoria.html" class="block px-2 py-2 hover:text-pink-700">Identidad e Historia</a></li>
+                <li><a href="#" class="block px-2 py-2 hover:text-pink-700">Libros, Revistas y Videos</a></li>
+                <li><a href="./praxis/index.html" target="_blank" class="block px-4 py-2 hover:text-pink-700">Congresos
+                        Praxis</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="p-2 flex justify-between items-center flex-wrap max-w-7xl mx-auto pleca"></div>
+    <div class="shadow p-1 flex justify-between items-center flex-wrap max-w-7xl mx-auto pleca-amarilla"></div>
+
+
+    <!-- 50% -->
+    <section class="mt-0 md:mt-0 bg-gray-200 py-10">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-6 px-4 items-stretch">
+            <!-- SLIDER -->
+            <div class="h-[60vh]">
+                <div id="slider" class="relative w-full h-full overflow-hidden rounded-xl shadow-md bg-white">
+                    <div id="slides" class="flex transition-transform duration-700 ease-in-out w-full h-full">
+                        <a href="./diplomado.html" class="w-full h-full block flex-shrink-0">
+                            <img src="assets/slider-index/slider-liderazgos-diplomado.jpg"
+                                class="w-full h-full object-cover rounded-xl" alt="Banner 1" />
+                        </a>
+                        <a href="https://campus.paho.org/es/curso/gestion-riesgo-emergencias" target="_blank"
+                            class="w-full h-full block flex-shrink-0">
+                            <img src="assets/slider-index/slider-liderazgos-curso.jpg"
+                                class="w-full h-full object-cover rounded-xl" alt="Banner 2" />
+                        </a>
+                        <a href="https://forms.office.com/pages/responsepage.aspx?id=yZMEgSHCJEa8YyUrlWkPORO75wRX9yRMsuVDiohs5e1UQVdZNEg0UTBQNzY1Q1A2TllMR0xKQjdTTC4u&route=shorturl"
+                            target="_blank" class="w-full h-full block flex-shrink-0">
+                            <img src="assets/slider-index/slider-liderazgos-webinario.jpg"
+                                class="w-full h-full object-cover rounded-xl" alt="Banner 3" />
+                        </a>
+
+                        <a href="./memoria.html" class="w-full h-full block flex-shrink-0">
+                            <img src="assets/slider-index/slider-liderazgos-4.jpg"
+                                class="w-full h-full object-cover rounded-xl" alt="Banner 4" />
+                        </a>
+                        <a href="diplomado.html" class="w-full h-full block flex-shrink-0">
+                            <img src="assets/slider-liderazgos-3.jpg" class="w-full h-full object-cover rounded-xl"
+                                alt="Banner 5" />
+                        </a>
+                        <a href="./praxis/index.html" class="w-full h-full block flex-shrink-0">
+                            <img src="assets/slider-liderazgos-1.jpg" class="w-full h-full object-cover rounded-xl"
+                                alt="Banner 6" />
+                        </a>
+                    </div>
+
+                    <!-- Botones -->
+                    <button id="prev"
+                        class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-30 text-white px-3 py-1">&#10094;</button>
+                    <button id="next"
+                        class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-30 text-white px-3 py-1">&#10095;</button>
+
+                    <!-- Puntos -->
+                    <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2" id="dots">
+                        <span class="dot w-3 h-3 rounded-full bg-white bg-opacity-50 cursor-pointer"></span>
+                        <span class="dot w-3 h-3 rounded-full bg-white bg-opacity-50 cursor-pointer"></span>
+                        <span class="dot w-3 h-3 rounded-full bg-white bg-opacity-50 cursor-pointer"></span>
+                        <span class="dot w-3 h-3 rounded-full bg-white bg-opacity-50 cursor-pointer"></span>
+                        <span class="dot w-3 h-3 rounded-full bg-white bg-opacity-50 cursor-pointer"></span>
+                        <span class="dot w-3 h-3 rounded-full bg-white bg-opacity-50 cursor-pointer"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CATEGORÍAS -->
+            <div class="flex flex-col justify-center">
+                <h2 class="text-2xl font-bold mb-6 text-center text-gray-800">Explora por Categoría</h2>
+                <div class="grid grid-cols-3 gap-4">
+
+                    <a id="cat-diplomado" href="./diplomado.html"
+                        class="categoria block bg-gray-400 hover:bg-pink-900 p-4 rounded shadow flex flex-col items-center justify-center text-center transition h-32">
+                        <img src="assets/cat4.png" class="w-14 h-10 mb-2" alt="Diplomado">
+                        <p class="text-white text-base">Diplomado</p>
+                    </a>
+
+                    <a id="cat-cursos" href="./cursos.html"
+                        class="categoria block bg-gray-400 hover:bg-pink-900 p-4 rounded shadow flex flex-col items-center justify-center text-center transition h-32">
+                        <img src="assets/cat2.png" class="w-14 h-10 mb-2" alt="Cursos">
+                        <p class="text-white text-base">Cursos</p>
+                    </a>
+                    <a id="cat-webinarios" href="./webinar.html"
+                        class="categoria block bg-gray-400 hover:bg-pink-900 p-4 rounded shadow flex flex-col items-center justify-center text-center transition h-32">
+                        <img src="assets/cat3.png" class="w-14 h-10 mb-2" alt="Webinars">
+                        <p class="text-white text-base">Webinarios</p>
+                    </a>
+
+                    <a id="cat-memoria" href="./memoria.html"
+                        class="categoria block bg-gray-400 hover:bg-pink-900 p-4 rounded shadow flex flex-col items-center justify-center text-center transition h-32">
+                        <img src="assets/cat5.png" class="w-14 h-10 mb-2" alt="Memoria">
+                        <p class="text-white text-base">Identidad e historia</p>
+                    </a>
+                    <a id="cat-editorial" href="#"
+                        class="categoria block bg-gray-400 hover:bg-pink-900 p-4 rounded shadow flex flex-col items-center justify-center text-center transition h-32">
+                        <img src="assets/cat6.png" class="w-14 h-10 mb-2" alt="Editorial">
+                        <p class="text-white text-base">Libros, Revistas y Videos</p>
+                    </a>
+                    <a id="cat-praxis" href="./praxis/index.html" target="_blank"
+                        class="categoria block bg-gray-400 hover:bg-pink-900 p-4 rounded shadow flex flex-col items-center justify-center text-center transition h-32">
+                        <img src="assets/cat1.png" class="w-14 h-10 mb-2" alt="Praxis">
+                        <p class="text-white text-base">Congresos Praxis</p>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 4. Eventos -->
+
+    <section id="eventos" class="py-10 px-4 bg-gray-50 max-w-7xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-3xl font-bold mb-2 text-rose-800">Siguientes Eventos</h2>
+            <div class="mx-auto w-24 h-1 bg-rose-800"></div>
+        </div>
+
+        <!-- Layout 70% eventos / 30% calendario -->
+        <div class="flex flex-col md:flex-row gap-6">
+
+            <!-- Eventos (70%) -->
+            <div class="w-full md:basis-[70%] ">
+                <div class="flex overflow-x-auto space-x-4 snap-x snap-mandatory scroll-smooth pb-4 scroll-eventos">
+
+                   
+
+                    <!-- Tarjeta 2 -->
+                    <div class="bg-white rounded shadow p-4 w-[280px] flex-shrink-0 snap-center max-width">
+                        <div class="relative">
+                            <div class="absolute top-0 left-0 bg-pink-700 text-white text-md px-2 py-1 rounded-br">
+                                09 JUL
+                            </div>
+                            <img src="./assets/evento/evento2.png" alt="" class="mb-2 rounded">
+                        </div>
+                        <h3 class="font-semibold text-lg mb-2">Diplomado: Atención primaria en salud</h3>
+                        <h4>Dr. José Moya Medina <br> Dra. Oliva López Arellano</h4>
+                        <p class="text-base text-gray-600 mt-1">
+                            <a href="https://maps.app.goo.gl/gMVWTgSaDme86w2A8" class="underline ">Auditorio Dirección
+                                Médica</a>
+                        </p>
+                        <a href="assets/evento.ics" download
+                            class="mt-4 bg-pink-700 text-white px-4 py-2 rounded hover:bg-pink-800 block text-center">
+                            Agregar a Calendario
+                        </a>
+                    </div>
+
+                    <!-- Tarjeta 3 -->
+                    <div class="bg-white rounded shadow p-4 w-[280px] flex-shrink-0 snap-center max-width">
+                        <div class="relative">
+                            <div class="absolute top-0 left-0 bg-pink-700 text-white text-md px-2 py-1 rounded-br">
+                                23 JUL
+                            </div>
+                            <img src="./assets/evento/evento3.png" alt="" class="mb-2 rounded">
+                        </div>
+                        <h3 class="font-semibold text-lg mb-1">Diplomado: La dimensión social de la salud y la
+                            bioética ¿determinantes sociales o salud
+                            colectiva?</h3>
+                        <h4>Dra. Ixshel Delgado - Duración: 32 horas</h4>
+                        <!-- <p class="text-base text-gray-600">Duración: 32 horas</p> -->
+                        <a href="assets/evento.ics" download
+                            class="mt-4 bg-pink-700 text-white px-4 py-2 rounded hover:bg-pink-800 block text-center">
+                            Agregar a Calendario
+                        </a>
+                    </div>
+                    <!-- Tarjeta 5 -->
+                    <div class="bg-white rounded shadow p-4 w-[420px] flex-shrink-0 snap-center max-width">
+                        <img src="./assets/evento/evento5.png" alt="" class="mb-2">
+                        <h4 class="font-semibold text-lg">Inauguración Museo Digital Voces y Raíces</h4>
+                        <br>
+                        <!-- <h3 class="font-semibold text-lg mb-2"></h3> -->
+                        <div class="h-[60px] overflow-hidden ancho">
+                            <p class="text-sm text-gray-600 tm-3">
+                                Muy pronto podrás descubrir el museo virtual Voces y Raíces, un espacio que rescata la
+                                memoria histórica para fortalecer nuestra identidad colectiva.
+                            </p>
+                        </div>
+                        <a href="./MuseoDigital/index.html"
+                            class="mt-4 bg-pink-700 text-white px-4 py-2 rounded hover:bg-pink-800 block text-center">
+                            Visitar Museo
+                        </a>
+                    </div>
+
+                    
+
+                    
+
+                    <!-- Tarjeta 6 -->
+                    <div class="bg-white rounded shadow p-4 w-[280px] flex-shrink-0 snap-center max-width">
+                        <div class="relative">
+                            <div class="absolute top-0 left-0 bg-pink-700 text-white text-md px-2 py-1 rounded-br">
+                                06 AGO
+                            </div>
+                            <img src="./assets/evento/evento6.png" alt="" class="mb-2">
+                        </div>
+                        <h3 class="font-semibold text-lg mb-2">Enfoque clínico Vs medicina basada en
+                            evidencia</h3>
+                        <h4>Dr. Pastor Castell-Florit Serrate</h4>
+                        <h4>Dra. Estela Gispert</h4>
+                        <!-- <p class="text-sm text-gray-600">Fecha: 09 de julio</p> -->
+                        <p class="text-sm text-gray-600 mt-2">
+                            <a href="https://maps.app.goo.gl/gMVWTgSaDme86w2A8" class="underline">
+                                Auditorio Dirección Médica
+                            </a>
+                        </p>
+                        <a href="assets/evento09-julio.ics" download
+                            class="mt-4 bg-pink-700 text-white px-4 py-2 rounded hover:bg-pink-800 block text-center">
+                            Agregar a Calendario
+                        </a>
+                    </div>
+
+                    <!-- Tarjeta 4 -->
+                    <div class="bg-white rounded shadow p-4 w-[280px] flex-shrink-0 snap-center max-width">
+                        <div class="relative">
+                            <div class="absolute top-0 left-0 bg-pink-700 text-white text-md px-2 py-1 rounded-br">
+                                07 AGO
+                            </div>
+                            <img src="./assets/evento/evento4.png" alt="" class="mb-2">
+                        </div>
+                        <h3 class="font-semibold text-lg mb-2">Webinario: Atención Primaria a la Salud</h3>
+                        <h4>Dr. José Moya Medina</h4>
+                        <p>OPS/OMS</p>
+                        <p class="text-sm text-gray-600 mb-6">Horario: 10:00 a 12:00</p>
+                        <a href="https://forms.office.com/Pages/DesignPageV2.aspx?..."
+                            class="mt-4 bg-pink-700 text-white px-4 py-2 rounded hover:bg-pink-800 block text-center ">
+                            Link Registro
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Calendario (30%) -->
+            <!-- Calendario (30%) -->
+            <div class="w-full md:w-[30%]">
+                <h3 class="text-lg font-bold mb-2 text-center text-rose-800">Julio 2025</h3>
+                <div
+                    class="grid grid-cols-7 text-center text-sm font-semibold text-gray-700 border border-gray-300 rounded overflow-hidden mb-8">
+                    <div class="bg-gray-100 p-2">Dom</div>
+                    <div class="bg-gray-100 p-2">Lun</div>
+                    <div class="bg-gray-100 p-2">Mar</div>
+                    <div class="bg-gray-100 p-2">Mié</div>
+                    <div class="bg-gray-100 p-2">Jue</div>
+                    <div class="bg-gray-100 p-2">Vie</div>
+                    <div class="bg-gray-100 p-2">Sáb</div>
+                    <div class="p-2"></div>
+                    <div class="p-2"></div>
+                    <div class="p-2">1</div>
+                    <div class="p-2">2</div>
+                    <div class="p-2">3</div>
+                    <div class="p-2">4</div>
+                    <div class="p-2">5</div>
+                    <div class="p-2">6</div>
+                    <div class="p-2 dia-evento bg-pink-700 text-white rounded cursor-pointer" data-dia="7">7</div>
+                    <div class="p-2">8</div>
+                    <div class="p-2 dia-evento bg-pink-700 text-white rounded cursor-pointer" data-dia="9">9</div>
+                    <div class="p-2">10</div>
+                    <div class="p-2">11</div>
+                    <div class="p-2">12</div>
+                    <div class="p-2">13</div>
+                    <div class="p-2">14</div>
+                    <div class="p-2">15</div>
+                    <div class="p-2">16</div>
+                    <div class="p-2">17</div>
+                    <div class="p-2">18</div>
+                    <div class="p-2">19</div>
+                    <div class="p-2">20</div>
+                    <div class="p-2">21</div>
+                    <div class="p-2">22</div>
+                    <div class="p-2 dia-evento bg-pink-700 text-white rounded cursor-pointer" data-dia="23">23</div>
+                    <div class="p-2">24</div>
+                    <div class="p-2">25</div>
+                    <div class="p-2">26</div>
+                    <div class="p-2">27</div>
+                    <div class="p-2">28</div>
+                    <div class="p-2">29</div>
+                    <div class="p-2">30</div>
+                    <div class="p-2">31</div>
+                </div>
+
+                <h3 class="text-lg font-bold mb-2 text-center text-rose-800">Agosto 2025</h3>
+                <div
+                    class="grid grid-cols-7 text-center text-sm font-semibold text-gray-700 border border-gray-300 rounded overflow-hidden">
+                    <div class="bg-gray-100 p-2">Dom</div>
+                    <div class="bg-gray-100 p-2">Lun</div>
+                    <div class="bg-gray-100 p-2">Mar</div>
+                    <div class="bg-gray-100 p-2">Mié</div>
+                    <div class="bg-gray-100 p-2">Jue</div>
+                    <div class="bg-gray-100 p-2">Vie</div>
+                    <div class="bg-gray-100 p-2">Sáb</div>
+                    <div class="p-2"></div>
+                    <div class="p-2"></div>
+                    <div class="p-2"></div>
+                    <div class="p-2"></div>
+                    <div class="p-2"></div>
+                    <div class="p-2">1</div>
+                    <div class="p-2">2</div>
+                    <div class="p-2">3</div>
+                    <div class="p-2">4</div>
+                    <div class="p-2">5</div>
+                    <div class="p-2 dia-evento bg-pink-700 text-white rounded cursor-pointer">6</div>
+                    <div class="p-2 dia-evento bg-pink-700 text-white rounded cursor-pointer" data-dia="7">7</div>
+                    <div class="p-2">8</div>
+                    <div class="p-2">9</div>
+                    <div class="p-2">10</div>
+                    <div class="p-2">11</div>
+                    <div class="p-2">12</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- 5. Noticias -->
+    <section id="noticias" class="py-10 px-4 max-w-7xl mx-auto">
+        <h2 class="text-3xl font-bold mb-6 text-center">Noticias recientes</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+            <!-- Noticia 1 -->
+            <div class="bg-white rounded shadow flex flex-col h-full">
+                <div class="flex flex-col sm:flex-row h-full">
+                    <!-- Imagen -->
+                    <div class="sm:w-1/2 h-40 sm:h-auto">
+                        <img src="./assets/noticias/nota1.png" alt="Noticia"
+                            class="w-full h-full object-cover object-center rounded-l">
+                    </div>
+
+                    <!-- Contenido -->
+                    <div class="p-4 flex flex-col justify-between sm:w-1/2">
+                        <div>
+                            <h3 class="font-semibold text-base mb-1">¿Sabías que la seguridad social en México surgió
+                                hace un siglo? </h3>
+                            <p class="text-sm text-gray-600">
+                                La Ley de Pensiones Civiles de 1925 instituyó el primer sistema de pensiones para
+                                trabajadores civiles del Estado. ¡Descubre este documento en nuestra curaduría histórica
+                                del museo virtual Voces y Raíces!
+                            </p>
+                        </div>
+                        <div class="mt-2">
+                            <a href="./memoria.html#coleccion">
+                                <button
+                                    class="bg-pink-700 text-white text-sm px-3 py-1 rounded hover:bg-pink-800 w-full">Ver
+                                    más</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Noticia 2 -->
+            <div class="bg-white rounded shadow flex flex-col h-full">
+                <div class="flex flex-col sm:flex-row h-full">
+                    <div class="sm:w-1/2 h-40 sm:h-auto">
+                        <img src="./assets/noticias/nota2.png" alt="Noticia"
+                            class="w-full h-full object-cover object-center rounded-l">
+                    </div>
+                    <div class="p-4 flex flex-col justify-between sm:w-1/2">
+                        <div>
+                            <h3 class="font-semibold text-base mb-1">¡Ya disponible! Curso de Gestión del Riesgo en Salud</h3>
+                            <p class="text-sm text-gray-600">
+                                Ya puedes tomar el curso “Gestión del Riesgo de Emergencias en Salud y Desastres”, modalidad autoaprendizaje. Accede en línea y aprende a tu ritmo.
+                            </p>
+                        </div>
+                        <div class="mt-2">
+                            <a href="cursos.html">
+                                <button class="bg-pink-700 text-white text-sm px-3 py-1 rounded hover:bg-pink-800 w-full">Ver
+                                    más</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Noticia 3 -->
+            <div class="bg-white rounded shadow flex flex-col h-full">
+                <div class="flex flex-col sm:flex-row h-full">
+                    <div class="sm:w-1/2 h-40 sm:h-auto">
+                        <img src="./assets/noticias/nota3.png" alt="Noticia"
+                            class="w-full h-full object-cover object-center rounded-l">
+                    </div>
+                    <div class="p-4 flex flex-col justify-between sm:w-1/2">
+                        <div>
+                            <h3 class="font-semibold text-base mb-1">Mañana inicia la clase del Diplomado en Salud</h3>
+                            <p class="text-sm text-gray-600">
+                                Este martes 9 de julio se llevará a cabo la clase “Atención Primaria en Salud” del Diplomado, impartida por el Dr. Moya y la Dra. Oliva López en el Auditorio de la Dirección Médica.
+                            </p>
+                        </div>
+                        <div class="mt-2">
+                            <a href="MuseoDigital/index.html">
+                                <button
+                                    class="bg-pink-700 text-white text-sm px-3 py-1 rounded hover:bg-pink-800 w-full">Visitar</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             <!-- Noticia 4 -->
+            <div class="bg-white rounded shadow flex flex-col h-full">
+                <div class="flex flex-col sm:flex-row h-full">
+                    <div class="sm:w-1/2 h-40 sm:h-auto">
+                        <img src="./assets/noticias/nota4.png" alt="Noticia"
+                            class="w-full h-full object-cover object-center rounded-l">
+                    </div>
+                    <div class="p-4 flex flex-col justify-between sm:w-1/2">
+                        <div>
+                            <h3 class="font-semibold text-base mb-1">Disponible el último webinario sobre Derecho a la Salud</h3>
+                            <p class="text-sm text-gray-600">
+                                Ya puedes ver la grabación completa del webinario “Derecho a la Salud”. Disponible en la página del programa para consulta abierta de todas y todos.
+                            </p>
+                        </div>
+                        <div class="mt-2">
+                            <a href="MuseoDigital/index.html">
+                                <button
+                                    class="bg-pink-700 text-white text-sm px-3 py-1 rounded hover:bg-pink-800 w-full">Visitar</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="bg-pink-800 text-white p-6 mt-16">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
+            <p class="text-sm">© 2025 ISSSTE - Todos los derechos reservados</p>
+            <div class="flex space-x-4 mt-4 md:mt-0">
+                <a href="aviso.html" class="hover:underline text-sm">Aviso de privacidad</a>
+                <a href="legal.html" class="hover:underline text-sm">Aviso Legal</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div id="modal-evento" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center">
+        <div class="bg-white rounded-lg shadow-lg max-w-md w-full p-6 relative">
+            <button id="cerrar-modal"
+                class="absolute top-2 right-2 text-gray-500 hover:text-gray-800 text-xl">&times;</button>
+            <h3 id="modal-titulo" class="text-xl font-semibold text-rose-800 mb-2"></h3>
+            <p id="modal-detalles" class="text-gray-700 text-sm mb-4"></p>
+            <a id="modal-link" href="#" target="_blank"
+                class="inline-block bg-pink-700 text-white px-4 py-2 rounded hover:bg-pink-800 text-sm">
+                Ver más
+            </a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const slides = document.getElementById("slides");
+            if (!slides) return; // Previene errores si el slider no existe
+
+            const slideImages = slides.querySelectorAll("img");
+            const dots = document.querySelectorAll(".dot");
+            const nextButton = document.getElementById("next");
+            const prevButton = document.getElementById("prev");
+            const categoriaElements = document.querySelectorAll(".categoria");
+
+            const categoriaMap = [
+                "cat-diplomado",
+                "cat-cursos",
+                "cat-webinarios",
+                "cat-memoria",
+                "cat-editorial",
+                "cat-praxis",
+            ];
+
+            let currentIndex = 0;
+            const totalSlides = slideImages.length;
+
+            function updateSlide(index) {
+                // 1. Mover slider
+                slides.style.transform = `translateX(-${index * 100}%)`;
+
+                // 2. Actualizar puntos activos
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle("bg-pink-700", i === index);
+                    dot.classList.toggle("bg-white", i !== index);
+                });
+
+                // 3. Quitar resaltado de todas las categorías
+                categoriaElements.forEach((el) => el.classList.remove("resaltado"));
+
+                // 4. Agregar resaltado a la categoría correspondiente (si existe)
+                const activeCategoryId = categoriaMap[index];
+                if (activeCategoryId) {
+                    const activeCategory = document.getElementById(activeCategoryId);
+                    if (activeCategory) {
+                        activeCategory.classList.add("resaltado");
+                    }
+                }
+            }
+
+            // Botón siguiente
+            nextButton ?.addEventListener("click", () => {
+                currentIndex = (currentIndex + 1) % totalSlides;
+                updateSlide(currentIndex);
+            });
+
+
+            // Botón anterior
+            prevButton ?.addEventListener("click", () => {
+                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                updateSlide(currentIndex);
+            });
+
+            // Puntos (dots)
+            dots.forEach((dot, i) => {
+                dot.addEventListener("click", () => {
+                    currentIndex = i;
+                    updateSlide(currentIndex);
+                });
+            });
+
+            // Slide automático cada 3 segundos
+            setInterval(() => {
+                currentIndex = (currentIndex + 1) % totalSlides;
+                updateSlide(currentIndex);
+            }, 3000);
+
+            updateSlide(currentIndex); // Mostrar slide inicial al cargar
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const toggle = document.getElementById("menu-toggle");
+            const menu = document.getElementById("menu");
+
+            toggle.addEventListener("click", () => {
+                menu.classList.toggle("hidden");
+            });
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const eventos = {
+                7: {
+                    titulo: "Gestión del Riesgo de Emergencias en Salud y Desastres",
+                    detalles: "Modalidad: Autoaprendizaje. Duración: 32 horas.",
+                    link: "assets/evento.ics"
+                },
+                9: {
+                    titulo: "Diplomado: Atención primaria en salud",
+                    detalles: "Ponentes: Dr. José Moya Medina y Dra. Oliva López Arellano. Auditorio Dirección Médica.",
+                    link: "assets/evento.ics"
+                },
+                23: {
+                    titulo: "Diplomado: Dimensión social y bioética",
+                    detalles: "Ponentes: Dr. Pastor Castell-Florit y Dra. Estela Gispert. Sala de Juntas ISSSTE.",
+                    link: "assets/evento.ics"
+                }
+            };
+
+            const modal = document.getElementById("modal-evento");
+            const cerrarBtn = document.getElementById("cerrar-modal");
+            const tituloEl = document.getElementById("modal-titulo");
+            const detallesEl = document.getElementById("modal-detalles");
+            const linkEl = document.getElementById("modal-link");
+
+            // Activar modal al dar clic en los días con evento
+            document.querySelectorAll(".dia-evento").forEach(el => {
+                el.addEventListener("click", () => {
+                    const dia = parseInt(el.dataset.dia);
+                    const evento = eventos[dia];
+                    if (evento) {
+                        tituloEl.textContent = evento.titulo;
+                        detallesEl.textContent = evento.detalles;
+                        linkEl.href = evento.link;
+                        modal.classList.remove("hidden");
+                        modal.classList.add("flex");
+                    }
+                });
+            });
+
+            // Cerrar modal
+            cerrarBtn.addEventListener("click", () => {
+                modal.classList.add("hidden");
+            });
+        });
+    </script>
+
+</body>
+
+</html>
