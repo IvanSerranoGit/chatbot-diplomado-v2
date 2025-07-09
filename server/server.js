@@ -19,13 +19,17 @@ app.get('/', (req, res) => {
 // Obtener la próxima clase
 function obtenerProximaClase() {
   const calendario = JSON.parse(fs.readFileSync(path.join(__dirname, 'calendario.json'), 'utf8'));
+
+  // Normaliza la fecha actual sin hora
   const hoy = new Date();
+  hoy.setHours(0, 0, 0, 0);
 
   const proximas = calendario
-    .map(clase => ({
-      ...clase,
-      fechaObj: new Date(clase.fecha)
-    }))
+    .map(clase => {
+      const fechaObj = new Date(clase.fecha);
+      fechaObj.setHours(0, 0, 0, 0); // normaliza la fecha del calendario
+      return { ...clase, fechaObj };
+    })
     .filter(clase => clase.fechaObj >= hoy)
     .sort((a, b) => a.fechaObj - b.fechaObj);
 
